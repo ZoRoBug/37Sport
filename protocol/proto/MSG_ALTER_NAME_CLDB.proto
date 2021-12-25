@@ -1,0 +1,8 @@
+message MSG_ALTER_NAME_CLDB
+{ 
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID（客户端不用传）
+   optional string   newName = 3; // 新的昵称
+   optional double   cost = 4; // 花费军饷金额
+   optional double   coin = 5; // 原有军饷金额（客户端不用传）
+}

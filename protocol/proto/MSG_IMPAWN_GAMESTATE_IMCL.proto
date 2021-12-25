@@ -1,0 +1,10 @@
+import "Common.proto";
+
+message MSG_IMPAWN_GAMESTATE_IMCL
+{
+   required uint32      msgID = 1; // 消息ID
+   optional double      pid = 2; // 玩家ID（=0则广播）
+   optional uint32      remainTime = 3; // 投注剩余时间（单位：毫秒，进行状态有效）
+   optional ImpawnState state = 4; // 游戏状态
+   optional uint32      round = 5; // 轮次
+}

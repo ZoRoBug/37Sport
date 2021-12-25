@@ -1,0 +1,23 @@
+message MSG_SEND_MAIL_LBCL
+{ 
+   enum Result
+   { 
+      SUCCESS = 0; // 成功
+      NO_CLIENT_INFO = 1; // 无客户端信息
+      OFFLINE = 2; // 服务器已离线
+      PARAM_INVALID = 3; // 参数非法
+      REDIS_ERROR = 4; // 数据库错误
+      SENDER_LACK_COIN = 5; // 发送者军饷不足
+      SENDER_LACK_NAME = 6; // 发送者昵称数据不存在
+      RECVER_OFFLINE = 7; // 接收者不在线
+      CONTENT_INVALID = 8; // 信件内容非法
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional double   sendPID = 2; // 发送者ID
+   optional double   recvPID = 3; // 接收者ID
+   optional string   sendName = 4; // 发送者昵称
+   optional string   recvName = 5; // 接收者昵称
+   optional double   giftCoin = 6; // 红包金额
+   optional string   content = 7; // 信件内容
+   optional Result   result = 8; // 结果
+}

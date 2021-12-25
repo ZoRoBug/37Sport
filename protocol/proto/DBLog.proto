@@ -1,0 +1,57 @@
+import "Common.proto";
+
+message DBLoginLog 
+{ 
+   optional double   pid = 1; // 玩家ID
+   optional string   ip = 2; // ip
+   optional string   guid = 3; // 唯一标识
+   optional string   loginTime = 4; // 登录时间
+   optional string   logoutTime = 5; // 登出时间
+}
+
+message DBUpdateLog 
+{ 
+   optional double   pid = 1; // 玩家ID
+   optional PropID   propID = 2; // 道具ID
+   optional double   update = 3; // 更新数量
+   optional double   result = 4; // 结果数量
+   optional Reason   reason = 5; // 更新原因
+   optional string   time = 6; // 更新时间
+   optional string   note = 7; // 备注
+}
+
+message DB3KingLog
+{
+   optional double   pid = 1; // 玩家ID
+   optional double   costCoin = 2; // 消耗军饷
+   optional double   gainCoin = 3; // 获得军饷
+   optional double   resultCoin = 4; // 结果军饷
+   optional uint32   action = 5; // 执行动作
+   optional uint32   round = 6; // 轮次
+   optional string   time = 7; // 时间
+}
+
+message DB7PowerLog
+{
+   optional double   pid = 1; // 玩家ID
+   optional double   costCoin = 2; // 消耗军饷
+   optional double   gainCoin = 3; // 获得军饷
+   optional double   resultCoin = 4; // 结果军饷
+   optional uint32   role = 5; // 扮演角色
+   optional uint32   round = 6; // 轮次
+   optional string   time = 7; // 时间
+}
+
+message DBImpawnLog
+{
+   optional double   pid = 1; // 玩家ID
+   optional double   costCoin = 2; // 消耗军饷
+   optional double   costSubcoin = 3; // 消耗军粮
+   optional double   gainCoin = 4; // 得到军饷
+   optional double   gainSubcoin = 5; // 得到军粮
+   optional double   resultCoin = 6; // 结果军饷
+   optional double   resultSubcoin = 7; // 结果军粮
+   optional uint32   object = 8; // 押分对象
+   optional uint32   round = 9; // 轮次
+   optional string   time = 10; // 时间
+}

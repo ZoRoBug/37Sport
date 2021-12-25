@@ -1,0 +1,6 @@
+message MSG_POWER7_LOGOUT_CLPW
+{
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   rid = 2; // 房间ID
+   optional double   pid = 3; // 玩家ID（客户端不用传）
+}

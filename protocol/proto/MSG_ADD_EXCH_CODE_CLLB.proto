@@ -1,0 +1,7 @@
+message MSG_ADD_EXCH_CODE_CLLB
+{ 
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID（客户端不用传）
+   optional double   ticketSum = 3; // 兑换码金额（获取兑换码）
+   optional string   ticket = 4; // 兑换码（添加兑换码）
+}

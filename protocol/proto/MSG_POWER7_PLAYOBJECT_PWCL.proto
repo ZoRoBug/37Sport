@@ -1,0 +1,25 @@
+message MSG_POWER7_PLAYOBJECT_PWCL
+{
+   enum Result
+   { 
+      SUCCESS = 0; // 支持成功
+      OFFLINE = 1; // 支持失败，七雄已离线
+      NO_CLIENT_INFO = 2; // 支持失败，未找到链接信息
+      NO_STARTING = 3; // 支持失败，游戏还未开始
+      NO_PLAYER = 4; // 支持失败，不是游戏玩家
+      NO_THIS_ROOM = 5; // 支持失败，房间不存在
+      ROUND_ERROR = 6; // 支持失败，轮次错误
+      SESSION_ERROR = 7; // 支持失败，场次错误
+      BET_COIN_ERROR = 8; // 支持失败，金额错误
+      REDIS_ERROR = 9; // 支持失败，REDIS出错
+      LACK_COIN = 10; // 支持失败，军饷不足
+      WITHHOLD_ERROR = 11; // 支持失败，预扣数据错误
+   }
+   required uint32      msgID = 1; // 消息ID
+   optional uint32      rid = 2; // 房间ID
+   optional uint32      round = 3; // 轮次
+   optional uint32      session = 4; // 场次
+   optional double      pid = 5; // 玩家ID
+   optional double      betCoin = 6; // 出兵金额
+   optional Result      result = 7; // 结果
+}

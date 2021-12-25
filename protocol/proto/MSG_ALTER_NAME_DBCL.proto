@@ -1,0 +1,22 @@
+message MSG_ALTER_NAME_DBCL
+{ 
+   enum Result
+   { 
+      SUCCESS = 0; // 成功
+      NO_CLIENT_INFO = 1; // 无客户端信息
+      OFFLINE = 2; // 服务器已离线
+      NAME_INVALID = 3; // 昵称非法
+      COST_ERROR = 4; // 消耗金额错误
+      SAME_NAME = 5; // 有相同昵称
+      DB_QUERY_ERROR = 6; // DB出错
+      REDIS_ERROR = 7; // REDIS出错
+      REDIS_FAIL = 8; // REDIS修改失败
+      LACK_COIN = 9; // 军饷不足
+      LACK_PI_INFO = 10; // 玩家信息缺失
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID
+   optional string   newName = 3; // 新的昵称
+   optional double   cost = 4; // 花费金额
+   optional Result   result = 5; // 修改结果
+}

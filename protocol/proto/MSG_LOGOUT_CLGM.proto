@@ -1,0 +1,6 @@
+message MSG_LOGOUT_CLGM
+{ 
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID（客户端无需传值）
+   optional string   ip = 3; // ip（客户端无需传值）
+}

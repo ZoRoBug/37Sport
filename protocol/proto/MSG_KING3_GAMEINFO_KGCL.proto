@@ -1,0 +1,13 @@
+message MSG_KING3_GAMEINFO_KGCL
+{
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   rid = 2; // 房间ID
+   optional double   betCoin = 3; // 博弈金额
+   repeated double   pidList = 4; // 发送对象
+   optional double   pid1 = 5; // 玩家1ID
+   optional double   pid2 = 6; // 玩家2ID
+   optional string   p1Head = 7; // 玩家1头像
+   optional string   p2Head = 8; // 玩家2头像
+   optional string   p1Nickname = 9; // 玩家1昵称
+   optional string   p2Nickname = 10; // 玩家2昵称
+}

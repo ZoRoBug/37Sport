@@ -1,0 +1,13 @@
+import "Common.proto";
+
+message MSG_KING3_GAMESTATE_KGCL
+{
+   required uint32      msgID = 1; // 消息ID
+   optional uint32      rid = 2; // 房间ID
+   optional uint32      round = 3; // 轮次
+   repeated double      pidList = 4; // 发送对象
+   optional King3State  state = 5; // 游戏状态
+   optional uint32      remainTime = 6; // 剩余时间（单位：毫秒，进行状态有效）
+   optional King3Object p1Object = 7; // 玩家1支持对象（非进行状态有效）
+   optional King3Object p2Object = 8; // 玩家2支持对象（非进行状态有效）
+}

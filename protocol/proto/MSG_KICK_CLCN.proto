@@ -1,0 +1,7 @@
+message MSG_KICK_CLCN
+{ 
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 管理员ID（客户端不用传）
+   optional uint32   timeSec = 3; // 踢出玩家秒数
+   optional string   nickname = 4; // 踢出玩家昵称
+}

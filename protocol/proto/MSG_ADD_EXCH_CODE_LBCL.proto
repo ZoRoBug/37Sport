@@ -1,0 +1,16 @@
+message MSG_ADD_EXCH_CODE_LBCL
+{ 
+   enum Result
+   { 
+      SUCCESS = 0; // 成功
+      NO_CLIENT_INFO = 1; // 无客户端信息
+      OFFLINE = 2; // 服务器已离线
+      PARAM_INVALID = 3; // 参数非法
+      REDIS_ERROR = 4; // 数据库错误
+      TICKET_EXIST = 5; // 兑换码已存在
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID
+   optional string   newTicket = 3; // 兑换码（为空则代表添加，不为空则代表获取兑换码）
+   optional Result   result = 4; // 结果
+}

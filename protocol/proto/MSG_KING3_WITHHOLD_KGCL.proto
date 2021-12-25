@@ -1,0 +1,8 @@
+message MSG_KING3_WITHHOLD_KGCL
+{
+   required uint32      msgID = 1; // 消息ID
+   optional uint32      rid = 2; // 房间ID
+   optional uint32      round = 3; // 轮次
+   optional double      pid = 4; // 玩家ID
+   optional double      coin = 5; // 预扣金额
+}

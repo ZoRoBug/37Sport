@@ -1,0 +1,10 @@
+message MSG_IMPAWN_SETTLEMENT_IMCL
+{
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID
+   optional bool     isChu = 3; // 是否投楚方
+   optional double   coinSum = 4; // 军饷投注金额
+   optional double   subcoinSum = 5; // 军粮投注金额
+   optional double   gainCoin = 6; // 获得军饷（=0代表损失，>0代表获胜，=押分金额负数代表无效返还）
+   optional uint32   round = 7; // 轮次
+}

@@ -1,0 +1,15 @@
+message MSG_POWER7_ROOMLIST_PWCL
+{
+   message Room
+   { 
+      optional uint32   rid = 1; // 房间ID
+      optional double   pid = 2; // 房主ID
+      optional string   head = 3; // 房主头像
+      optional string   nickname = 4; // 房主昵称
+      optional string   desc = 5; // 房间描述
+      optional bool     isPassword = 6; // 是否设置密码
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID（=0代表广播）
+   repeated Room     roomList = 3; // 房间列表
+}

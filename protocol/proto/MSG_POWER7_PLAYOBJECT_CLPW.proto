@@ -1,0 +1,9 @@
+message MSG_POWER7_PLAYOBJECT_CLPW
+{
+   required uint32      msgID = 1; // 消息ID
+   optional uint32      rid = 2; // 房间ID
+   optional uint32      round = 3; // 轮次
+   optional uint32      session = 4; // 场次
+   optional double      pid = 5; // 玩家ID（客户端不用传）
+   optional double      betCoin = 6; // 出兵金额
+}

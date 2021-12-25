@@ -1,0 +1,10 @@
+message MSG_POWER7_LOGIN_CLPW
+{
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   rid = 2; // 房间ID（随机匹配为0）
+   optional double   pid = 3; // 玩家ID（客户端不用传）
+   optional double   maxBetCoin = 4; // 最大出兵军饷（解锁房 和 随机匹配）
+   optional double   cost = 5; // 解锁费用（有锁房有效）
+   optional string   desc = 6; // 房间描述（有锁房间设置）
+   optional string   password = 7; // 房间密码（有锁房间设置）
+}

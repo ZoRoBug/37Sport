@@ -1,0 +1,28 @@
+message MSG_IMPAWN_GAMEINFO_IMCL
+{
+   message Impawn
+   {
+      optional bool     isChu = 1; // 投楚方？
+      optional double   betSum = 2; // 投注金额
+      optional string   nickname = 3; // 投注玩家昵称
+   }
+   required uint32      msgID = 1; // 消息ID
+   optional double      pid = 2; // 玩家ID（=0则广播）
+   optional double      chuImpawnTotal = 3; // 楚方投注总量
+   optional double      hanImpawnTotal = 4; // 汉方投注总量
+   optional uint32      chuAwardRate = 5; // 楚方奖励倍率（>=100，使用需除以100）
+   optional uint32      hanAwardRate = 6; // 汉方奖励倍率（>=100，使用需除以100）
+
+   optional uint32      playerChuImpawnTimes = 7; // 玩家楚方投注次数（pid>0有效）
+   optional uint32      playerHanImpawnTimes = 8; // 玩家汉方投注次数（pid>0有效）
+   optional double      playerChuImpawnTotal = 9; // 玩家楚方投注总量（pid>0有效）
+   optional double      playerHanImpawnTotal = 10; // 玩家汉方投注总量（pid>0有效）
+   repeated Impawn      impawnList = 11; // 投注靠前列表（pid>0有效）
+
+   repeated bool        recordList = 12; // 游戏结果列表（pid>0有效）
+   optional uint32      chuWinRecord = 13; // 楚胜次数记录（pid>0有效）
+   optional uint32      hanWinRecord = 14; // 汉胜次数记录（pid>0有效）
+
+   optional uint32      restartHour = 15; // 几点重新开始（pid>0有效）
+   optional uint32      pauseHour = 16; // 几点暂停游戏（pid>0有效）
+}

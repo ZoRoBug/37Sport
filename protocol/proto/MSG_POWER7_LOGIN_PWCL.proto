@@ -1,0 +1,23 @@
+message MSG_POWER7_LOGIN_PWCL
+{
+   enum Result
+   { 
+      SUCCESS = 0; // 登录成功
+      OFFLINE = 1; // 登录失败，七雄已离线
+      NO_CLIENT_INFO = 2; // 登录失败，未找到链接信息
+      OTHER_UNLOCK = 3; // 登录失败，其他人已解锁
+      UNLOCK_COST_ERROR = 4; // 登录失败，解锁费用错误
+      NOT_READY = 5; // 登录失败，还未准备好
+      PARAM_ERROR = 6; // 登录失败，参数错误
+      ROOM_FULL = 7; // 登录失败，房间已满
+      REDIS_ERROR = 8; // 登录失败，ridis出错
+      COIN_NOT_ENOUGH = 9; // 登录失败，军饷不足
+      PASSWORD_ERROR = 10; // 登录失败，密码错误
+      FULL_PLAYER = 11; // 登录失败，人数已满
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   rid = 2; // 房间ID
+   optional double   pid = 3; // 玩家ID
+   optional double   cost = 4; // 解锁费用
+   optional Result   result = 5; // 登录结果
+}

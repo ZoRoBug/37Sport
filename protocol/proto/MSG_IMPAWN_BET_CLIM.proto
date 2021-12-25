@@ -1,0 +1,9 @@
+message MSG_IMPAWN_BET_CLIM
+{
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID（客户端不用传）
+   optional bool     isChu = 3; // 是否投楚方
+   optional double   coinSum = 4; // 军饷投注金额
+   optional double   subcoinSum = 5; // 军粮投注金额
+   optional uint32   round = 6; // 轮次
+}

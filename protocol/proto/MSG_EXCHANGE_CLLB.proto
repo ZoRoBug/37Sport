@@ -1,0 +1,6 @@
+message MSG_EXCHANGE_CLLB
+{ 
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID（客户端不用传）
+   optional string   ticket = 3; // 兑换码
+}

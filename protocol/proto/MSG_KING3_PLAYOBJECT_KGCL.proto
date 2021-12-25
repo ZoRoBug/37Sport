@@ -1,0 +1,22 @@
+import "Common.proto";
+
+message MSG_KING3_PLAYOBJECT_KGCL
+{
+   enum Result
+   { 
+      SUCCESS = 0; // 支持成功
+      OFFLINE = 1; // 支持失败，三国已离线
+      NO_CLIENT_INFO = 2; // 支持失败，未找到链接信息
+      NO_STARTING = 3; // 支持失败，游戏还未开始
+      OBJECT_ERROR = 4; // 支持失败，对象错误
+      NO_PLAYER = 5; // 支持失败，不是游戏玩家
+      NO_THIS_ROOM = 6; // 支持失败，房间不存在
+      ROUND_ERROR = 7; // 支持失败，轮次错误
+   }
+   required uint32      msgID = 1; // 消息ID
+   optional uint32      rid = 2; // 房间ID
+   optional uint32      round = 3; // 轮次
+   optional double      pid = 4; // 玩家ID
+   optional King3Object object = 5; // 支持对象
+   optional Result      result = 6; // 支持结果
+}

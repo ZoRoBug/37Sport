@@ -1,0 +1,10 @@
+message MSG_KING3_LOGIN_CLKG
+{
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   rid = 2; // 房间ID（随机匹配为0）
+   optional double   pid = 3; // 玩家ID（客户端不用传）
+   optional double   cost = 4; // 解锁费用（有锁房有效）
+   optional double   betCoin = 5; // 博弈金额（有锁房设置 或 随机匹配博弈金额）
+   optional string   desc = 6; // 房间描述（有锁房间设置）
+   optional string   password = 7; // 房间密码（有锁房间设置）
+}

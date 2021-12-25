@@ -1,0 +1,23 @@
+message MSG_IMPAWN_BET_FAIL_IMCL
+{
+   enum Reason
+   {
+      OFFLINE = 1; // 楚汉已离线
+      NO_LOGIN = 2; // 未登录楚汉
+      NO_CLIENT_INFO = 3; // 链接信息不存在
+      PARAM_ERROR = 4; // 投注参数错误
+      REDIS_ERROR = 5; // Redis出错
+      COIN_NOT_ENOUGH = 6; // 粮饷不足
+      WRITE_REDIS_FAIL = 7; // 写入Redis失败
+      NO_STARTING = 8; // 楚汉未开始
+      ROUND_ERROR = 9; // 轮次错误
+      OVER_MAX_LOSS = 10; // 已超出最大损失限额
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID
+   optional bool     isChu = 3; // 是否投楚方
+   optional double   coinSum = 4; // 军饷投注金额
+   optional double   subcoinSum = 5; // 军粮投注金额
+   optional uint32   round = 6; // 轮次
+   optional Reason   reason = 7; // 原因
+}

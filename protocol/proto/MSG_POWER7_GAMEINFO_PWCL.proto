@@ -1,0 +1,14 @@
+message MSG_POWER7_GAMEINFO_PWCL
+{
+   message Player 
+   { 
+      optional double   pid = 1; // 玩家ID
+      optional string   head = 2; // 玩家头像
+      optional string   nickname = 3; // 玩家昵称
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   rid = 2; // 房间ID
+   optional double   maxBetCoin = 3; // 最大竞技金额
+   repeated double   pidList = 4; // 发送对象
+   repeated Player   playerList = 5; // 玩家列表
+}

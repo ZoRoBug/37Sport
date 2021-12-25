@@ -1,0 +1,17 @@
+message MSG_SIGNIN_LBCL
+{ 
+   enum Result
+   { 
+      SUCCESS = 0; // 成功
+      NO_CLIENT_INFO = 1; // 无客户端信息
+      OFFLINE = 2; // 服务器已离线
+      REDIS_ERROR = 4; // 数据库错误
+      PLAYER_OFFLINE = 5; // 玩家不在线
+      NO_TIME_TO = 6; // 还没到时间
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID
+   optional double   subcoin = 3; // 奖励军粮（成功有效）
+   optional uint32   remainTime = 4; // 剩余多久时间领奖
+   optional Result   result = 5; // 结果
+}

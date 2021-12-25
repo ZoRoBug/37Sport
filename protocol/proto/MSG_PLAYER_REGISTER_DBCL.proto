@@ -1,0 +1,22 @@
+import "Common.proto";
+
+message MSG_PLAYER_REGISTER_DBCL 
+{ 
+   enum Result
+   { 
+      SUCCESS = 0; // 成功（数据库返回）
+      NAME_EXIST = 1; // 昵称已存在（数据库返回）
+      MARIADB_QUERY_FAIL = 2; // 数据库执行失败（数据库返回）
+      PARAM_ERROR = 3; // 参数有误（数据库返回）
+      MARIADB_QUERY_ERROR = 10; // 数据库执行错误
+      LOBBY_NO_CONNECT = 11; // 游戏大厅未链接
+      NAME_INVALID = 12; // 昵称非法
+      PASSWORD_INVALID = 13; // 密码非法
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional string   nickname = 2; // 昵称
+   optional string   password = 3; // 密码
+   optional Platform platform = 4; // 平台
+   optional double   loginID = 5; // 登录ID
+   optional Result   result = 6; // 注册结果
+}

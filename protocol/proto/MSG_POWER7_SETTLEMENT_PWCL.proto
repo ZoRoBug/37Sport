@@ -1,0 +1,11 @@
+message MSG_POWER7_SETTLEMENT_PWCL
+{
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   rid = 2; // 房间ID
+   optional uint32   round = 3; // 轮次
+   optional uint32   session = 4; // 场次
+   optional double   pid = 5; // 玩家ID
+   optional double   costCoin = 6; // 花费军饷
+   optional double   gainCoin = 7; // 获得军饷
+   optional double   gameOver = 8; // 本轮是否结束
+}

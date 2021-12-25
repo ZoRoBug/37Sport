@@ -1,0 +1,19 @@
+import "Common.proto";
+
+message MSG_POWER7_GAMESTATE_PWCL
+{
+   message Player 
+   { 
+      optional double   pid = 1; // 玩家ID
+      optional double   betCoin = 2; // 出兵军饷
+      optional bool     isOut = 3; // 是否已出局
+   }
+   required uint32      msgID = 1; // 消息ID
+   optional uint32      rid = 2; // 房间ID
+   optional uint32      round = 3; // 轮次
+   optional uint32      session = 4; // 场次
+   repeated double      pidList = 5; // 发送对象
+   optional Power7State state = 6; // 游戏状态
+   optional uint32      remainTime = 7; // 剩余时间（单位：毫秒，进行状态有效）
+   repeated Player      playerList = 8; // 玩家出兵情况（非进行状态有效）
+}

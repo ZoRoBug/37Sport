@@ -1,0 +1,8 @@
+message MSG_VIEW_RECORD_CLDB
+{ 
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID（客户端不用传）
+   optional double   cost = 3; // 查看记录消耗军饷
+   optional string   beginTime = 4; // 记录开始时间
+   optional string   endTime = 5; // 记录结束时间
+}

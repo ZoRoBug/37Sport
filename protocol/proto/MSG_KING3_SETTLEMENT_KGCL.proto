@@ -1,0 +1,9 @@
+message MSG_KING3_SETTLEMENT_KGCL
+{
+   required uint32   msgID = 1; // 消息ID
+   optional uint32   rid = 2; // 房间ID
+   optional uint32   round = 3; // 轮次
+   optional double   pid = 4; // 玩家ID
+   optional double   costCoin = 5; // 花费军饷
+   optional double   gainCoin = 6; // 获得军饷
+}

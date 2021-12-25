@@ -1,0 +1,116 @@
+// 道具ID
+enum PropID 
+{ 
+   COIN = 1; // 军饷
+   SUBCOIN = 1025; // 军粮
+}
+
+// 更新原因
+enum Reason 
+{ 
+   STATIC_AD = 1; // 静态广告
+   ANIMATE_AD = 2; // 动态广告
+   VIEW_RECORD = 3; // 查看记录
+   SHOP_RECHARGE = 4; // 商城充值
+   KING3_UNLOCK = 5; // 三国鼎立解锁
+   POWER7_UNLOCK = 6; // 七雄争霸解锁
+   KING3_REFUND = 7; // 三国鼎立退款
+   POWER7_REFUND = 8; // 七雄争霸退款
+   IMPAWN_REFUND = 9; // 楚汉相争退款
+   ALTER_NICKNAME = 10; // 修改昵称
+   MAIL_SEND_GIFT = 11; // 发送红包
+   TICKET_EXCHANGE = 12; // 兑换军饷
+   SIGNIN_AWARD = 13; // 签到领奖
+   SYSTEM_AWARD = 14; // 系统领奖
+}
+
+// 游戏平台
+enum Platform 
+{
+   MIN = 0; // 最小值-1
+   OFFICIAL = 1; // 官方
+   WX_MINIGAME = 2; // 微信小游戏
+   MAX = 3; // 最大值+1
+}
+
+// 玩家身份
+enum Identity 
+{ 
+   GENERAL = 1; // 普通
+   NOR_GM = 2; // 普通GM
+   ADV_GM = 3; // 高级GM
+   ADMIN = 4; // ADMIN
+}
+
+// 游戏位置
+enum Location
+{
+   LOBBY = 1; // 游戏大厅，大厅模块
+   KING3 = 2; // 三国鼎立，三国模块
+   POWER7 = 3; // 七雄争霸，七雄模块
+   IMPAWN = 4; // 楚汉相争，楚汉模块
+}
+
+// 三国状态
+enum King3State
+{
+   PREPARE = 1; // 准备
+   WAIT_START = 2; // 等待开始
+   WITHHOLD = 3; // 开始预扣
+   STARTING = 4; // 开始进行中
+   WAIT_END = 5; // 等待结算
+   SETTLEMENT = 6; // 结算
+}
+
+// 三国对象
+enum King3Object
+{
+   MIN = 0; // 最小值-1
+   WEI = 1; // 魏国
+   SHU = 2; // 蜀国
+   WU = 3; // 吴国
+   MAX = 4; // 最大值+1
+}
+
+// 七雄状态
+enum Power7State
+{
+   PREPARE = 1; // 准备
+   WAIT_START = 2; // 等待开始
+   WITHHOLD = 3; // 开始预扣
+   STARTING = 4; // 开始进行中
+   WAIT_END = 5; // 等待结算
+   SETTLEMENT = 6; // 结算
+}
+
+// 楚汉状态
+enum ImpawnState
+{
+   WAIT_START = 1; // 等待开始
+   STARTING = 2; // 开始进行中
+   WAIT_END = 3; // 等待结算
+   SETTLEMENT = 4; // 结算
+   PAUSE = 5; // 暂停
+}
+
+// 道具结构
+message Prop
+{ 
+   optional PropID   id = 1; // 道具ID
+   optional double   count = 2; // 道具数量
+}
+
+// 玩家信息
+message PlayerInfo 
+{ 
+   optional double   pid = 1; // 玩家ID
+   optional string   account = 2; // 账号
+   optional string   password = 3; // 密码
+   optional string   head = 4; // 头像地址
+   optional string   nickname = 5; // 昵称
+   optional Identity identity = 6; // 身份
+   optional Platform platform = 7; // 平台
+   optional string   regTime = 8; // 注册时间
+   optional string   loginTime = 9; // 最近登录时间
+   optional string   logoutTime = 10; // 最近登出时间
+}

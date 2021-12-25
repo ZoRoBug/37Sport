@@ -1,0 +1,20 @@
+message MSG_EXCHANGE_LBCL
+{ 
+   enum Result
+   { 
+      SUCCESS = 0; // 成功
+      NO_CLIENT_INFO = 1; // 无客户端信息
+      OFFLINE = 2; // 服务器已离线
+      PARAM_INVALID = 3; // 参数非法
+      REDIS_ERROR = 4; // 数据库错误
+      PLAYER_OFFLINE = 5; // 玩家不在线
+      TICKET_NO_EXIST = 6; // 兑换码不存在
+      MAX_FAIL_TIMES = 7; // 已达到最大兑换失败次数
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID
+   optional string   ticket = 3; // 兑换码
+   optional double   coin = 4; // 获得军饷（成功有效）
+   optional uint32   failTimes = 5; // 失败次数（不成功有效）
+   optional Result   result = 6; // 结果
+}

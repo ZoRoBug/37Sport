@@ -1,0 +1,9 @@
+message MSG_IMPAWN_NEW_BET_IMCL
+{
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID（=0则广播）
+   optional string   nickname = 3; // 玩家昵称
+   optional bool     isChu = 4; // 是否投楚方
+   optional double   betSum = 5; // 投注金额
+   optional uint32   round = 6; // 轮次
+}

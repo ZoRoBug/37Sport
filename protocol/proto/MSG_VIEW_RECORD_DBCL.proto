@@ -1,0 +1,31 @@
+message MSG_VIEW_RECORD_DBCL
+{ 
+   enum Result
+   { 
+      SUCCESS = 0; // 成功
+      NO_CLIENT_INFO = 1; // 无客户端信息
+      OFFLINE = 2; // 服务器已离线
+      PARAM_ERROR = 3; // 参数错误
+      REDIS_ERROR = 4; // REDIS出错
+      REDIS_FAIL = 5; // REDIS失败
+      NO_PLAYER_INFO = 6; // 无玩家信息
+      LACK_COIN = 7; // 军饷不足
+      DB_QUERY_ERROR = 8; // 数据库错误
+   }
+   message Record
+   {
+      optional sint32   reason = 1; // 原因，负数为三国，七雄，楚汉枚举值取负
+      optional double   costCoin = 2; // 消耗军饷（三国，七雄，楚汉）
+      optional double   costSubcoin = 3; // 消耗军粮（楚汉，楚汉退款）
+      optional double   gainCoin = 4; // 获得军饷（道具更新正数收入，负数支出）
+      optional double   gainSubcoin = 5; // 获得军粮（道具更新正数收入，负数支出）
+      optional string   note = 6; // 更新备注
+      optional string   time = 7; // 更新时间
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID
+   optional double   cost = 3; // 消耗军饷
+   optional bool     isNew = 4; // 新搜索
+   optional Result   result = 5; // 查看结果
+   repeated Record   recordList = 6; // 记录列表
+}

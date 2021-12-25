@@ -1,0 +1,5 @@
+message MSG_KING3_ROOMLIST_CLKG
+{
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID（客户端不用传）
+}

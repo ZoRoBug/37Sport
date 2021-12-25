@@ -1,0 +1,10 @@
+import "Common.proto";
+
+message MSG_PLAYER_REGISTER_CLDB
+{ 
+   required uint32   msgID = 1; // 消息ID
+   optional string   nickname = 2; // 昵称
+   optional string   password = 3; // 密码
+   optional Platform platform = 4; // 平台
+   optional double   loginID = 5; // 登录ID（客户端无需关心）
+}

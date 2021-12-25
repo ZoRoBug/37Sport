@@ -1,0 +1,12 @@
+message MSG_IMPAWN_LOGIN_CNCL
+{
+   enum Result
+   { 
+      SUCCESS = 0; // 登录成功
+      OFFLINE = 1; // 登录失败，楚汉已离线
+      NO_CLIENT_INFO = 2; // 登录失败，未找到链接信息
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 玩家ID
+   optional Result   result = 3; // 登录结果
+}

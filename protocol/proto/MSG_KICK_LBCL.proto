@@ -1,0 +1,12 @@
+message MSG_KICK_LBCL
+{ 
+   enum Reason
+   { 
+      OTHER_LOGIN = 1; // 其他人登录
+      GM_KICK = 2; // GM踢下线
+   }
+   required uint32   msgID = 1; // 消息ID
+   optional double   pid = 2; // 踢出玩家ID
+   optional Reason   reason = 3; // 剔除原因
+   optional uint32   timeSec = 4; // 踢出玩家秒数（GM踢出有效）
+}

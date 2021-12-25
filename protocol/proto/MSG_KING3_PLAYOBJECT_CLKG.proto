@@ -1,0 +1,10 @@
+import "Common.proto";
+
+message MSG_KING3_PLAYOBJECT_CLKG
+{
+   required uint32      msgID = 1; // 消息ID
+   optional uint32      rid = 2; // 房间ID
+   optional uint32      round = 3; // 轮次
+   optional double      pid = 4; // 玩家ID（客户端不用传）
+   optional King3Object object = 5; // 支持对象
+}

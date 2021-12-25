@@ -1,0 +1,10 @@
+message MSG_SEND_MAIL_CLLB
+{ 
+   required uint32   msgID = 1; // 消息ID
+   optional double   sendPID = 2; // 发送者ID（客户端不用传）
+   optional double   recvPID = 3; // 接收者ID（客户端不用传）
+   optional string   sendName = 4; // 发送者昵称（客户端不用传）
+   optional string   recvName = 5; // 接收者昵称
+   optional double   giftCoin = 6; // 红包金额
+   optional string   content = 7; // 信件内容
+}

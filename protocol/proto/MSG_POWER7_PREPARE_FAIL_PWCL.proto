@@ -1,0 +1,20 @@
+message MSG_POWER7_PREPARE_FAIL_PWCL
+{
+   enum Reason
+   {
+      OFFLINE = 1; // 准备失败，七雄已离线
+      NO_CLIENT_INFO = 2; // 准备失败，未找到链接信息
+      OTHER_PREPARE = 3; // 准备失败，其他人已准备
+      REDIS_ERROR = 4; // 准备失败，REDIS获取信息失败
+      REDIS_NO_PI = 5; // 准备失败，REDIS未获取到玩家
+      NO_THIS_ROOM = 6; // 准备失败，没有这个房间
+      NO_PREPARE_STATE = 7; // 准备失败，不是准备状态
+      LACK_COIN = 8; // 准备失败，军饷不足
+      OVER_MAX_LOSS = 9; // 准备失败，已经超出最大损失金额
+      SERVER_NO_READY = 10; // 准备失败，服务器未准备好
+   }
+   required uint32  msgID = 1; // 消息ID
+   optional uint32  rid = 2; // 房间ID
+   optional double  pid = 3; // 玩家ID
+   optional Reason  reason = 4; // 原因
+}
